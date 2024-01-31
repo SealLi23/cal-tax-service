@@ -1,6 +1,8 @@
 package com.secretservice.taxservice.service;
 
+import com.secretservice.taxservice.calculator.CalculatorFactory;
 import com.secretservice.taxservice.calculator.CongestionTaxCalculator;
+import com.secretservice.taxservice.enums.CityEnum;
 import com.secretservice.taxservice.utils.DateUtils;
 import com.secretservice.taxservice.utils.VehicleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +14,16 @@ import java.util.stream.Collectors;
 
 @Service
 public class CongestionCalculationServiceImp implements CongestionCalculationService{
-
     private final long MILLISECOND_IN_HOUR = TimeUnit.HOURS.toMillis(1);
 
     private final int MAX_TOLL_A_DAY = 60;
 
     @Autowired
-    private CongestionTaxCalculator congestionTaxCalculator;
+    private CalculatorFactory calculatorFactory;
     private final String TOTAL = "total";
     @Override
-    public Map<String, Integer> getTotalTax(int vehicleCode, Date[] dates) {
+    public Map<String, Integer> getTotalTax(int vehicleCode, Date[] dates, CityEnum cityEnum) {
+        CongestionTaxCalculator congestionTaxCalculator = calculatorFactory.getCalculator(cityEnum);
         Map<String, Integer> dailyBill = new HashMap<>();
         dailyBill.put(TOTAL, 0);
         if(dates == null || dates.length==0

@@ -1,6 +1,6 @@
 package com.secretservice.taxservice.enums;
 
-public enum VehicleType {
+public enum VehicleTypeEnum {
     MOTORCYCLE("Motorcycle",0),
     BUS("Bus",1),
     EMERGENCY("Emergency",2),
@@ -11,12 +11,12 @@ public enum VehicleType {
 
     String type;
     int code;
-    VehicleType(String type, int code) {
+    VehicleTypeEnum(String type, int code) {
         this.code = code;
         this.type = type;
     }
 
-    public static VehicleType getVehicleType(int code){
+    public static VehicleTypeEnum getVehicleType(int code){
         switch(code){
             case 0:{
                 return MOTORCYCLE;

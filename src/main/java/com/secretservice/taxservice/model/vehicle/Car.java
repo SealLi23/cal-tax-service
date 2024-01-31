@@ -1,6 +1,6 @@
 package com.secretservice.taxservice.model.vehicle;
 
-import com.secretservice.taxservice.enums.VehicleType;
+import com.secretservice.taxservice.enums.VehicleTypeEnum;
 
 public class Car implements Vehicle {
     private String manufacture;
@@ -14,8 +14,8 @@ public class Car implements Vehicle {
 
     public void setCode(int code) {
         this.code = code;
-    }    public VehicleType getVehicleType() {
-        return VehicleType.getVehicleType(code);
+    }    public VehicleTypeEnum getVehicleType() {
+        return VehicleTypeEnum.getVehicleType(code);
     }
 
     @Override

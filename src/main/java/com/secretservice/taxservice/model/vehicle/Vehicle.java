@@ -1,9 +1,9 @@
 package com.secretservice.taxservice.model.vehicle;
 
-import com.secretservice.taxservice.enums.VehicleType;
+import com.secretservice.taxservice.enums.VehicleTypeEnum;
 
 public interface Vehicle {
-    VehicleType getVehicleType();
+    VehicleTypeEnum getVehicleType();
 
     String getManufacture();
 

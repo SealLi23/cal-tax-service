@@ -1,5 +1,6 @@
 package com.secretservice.taxservice.calculator;
 
+import com.secretservice.taxservice.enums.CityEnum;
 import com.secretservice.taxservice.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
@@ -52,5 +53,10 @@ public class GtbCongestionTaxCalculator implements CongestionTaxCalculator{
                 return 8;
         }
         return 0;
+    }
+
+    @Override
+    public CityEnum getCity() {
+        return CityEnum.GOTHENBURG;
     }
 }
