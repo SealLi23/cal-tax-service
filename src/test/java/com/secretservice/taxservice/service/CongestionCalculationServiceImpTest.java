@@ -1,5 +1,6 @@
 package com.secretservice.taxservice.service;
 
+import com.secretservice.taxservice.enums.CityEnum;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -112,26 +113,26 @@ public class CongestionCalculationServiceImpTest {
 
     @Test
     public void getTotalTaxTestWithSampleCase() {
-        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,dates);
+        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,dates, CityEnum.GOTHENBURG);
         Assert.assertEquals(97, result.get("total").intValue());
     }
 
     @Test
     public void getTotalTaxTestWithNULLDates() {
-        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,null);
+        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,null,CityEnum.GOTHENBURG);
         Assert.assertEquals(0, result.get("total").intValue());
     }
 
     @Test
     public void getTotalTaxTestWithEmptyDates() {
-        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,new Date[]{});
+        Map<String,Integer> result = congestionCalculationService.getTotalTax(9,new Date[]{},CityEnum.GOTHENBURG);
         Assert.assertEquals(0, result.get("total").intValue());
     }
 
     @Test
     public void getTotalTaxTestWithTollFreeVehicle() {
         for(int i=0;i<=5;i++) {
-            Map<String, Integer> result = congestionCalculationService.getTotalTax(i, dates);
+            Map<String, Integer> result = congestionCalculationService.getTotalTax(i, dates,CityEnum.GOTHENBURG);
             Assert.assertEquals(0, result.get("total").intValue());
         }
     }
