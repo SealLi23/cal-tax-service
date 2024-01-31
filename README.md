@@ -20,5 +20,7 @@ After build it,
 
 TODO: The current implementation is not mature, so there are several important enhancements to do.
 1. to finalize the business logic and solution as mentioned in the questions.md
-2. to add more testcases to improve its quality and maturity
-3. to implement a module which can help dynamically calculate the holiday of a given year
+2. to enhance the validation on the request parameters
+3. to add more testcases to improve its quality and maturity
+4. to implement a module which can help dynamically calculate the holiday of a given year
+5. to implement authentication and authorization and other security mechanisms

@@ -27,8 +27,7 @@ public class TaxServiceController {
         if(timestamps == null || timestamps.isEmpty()){
             return ResponseEntity.badRequest().build();
         }
-        Date[] dates = timestamps.stream().filter(t->t!=null).sorted()
-                    .filter(d->d!=null).sorted((Comparator.naturalOrder()))
+        Date[] dates = timestamps.stream()
                     .collect(Collectors.toList()).toArray(new Date[]{});
         return ResponseEntity.ok(congestionCalculationService.getTotalTax(code, dates, CityEnum.GOTHENBURG));
     }

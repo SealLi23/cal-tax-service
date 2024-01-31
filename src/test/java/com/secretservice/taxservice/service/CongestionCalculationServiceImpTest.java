@@ -35,38 +35,6 @@ public class CongestionCalculationServiceImpTest {
 
     private Date[] dates;
 
-//           "2013-01-14 21:00:00"
-//
-//            "2013-01-15 21:00:00"
-//
-//            "2013-02-07 06:23:27"
-//
-//            "2013-02-07 15:27:00"
-//
-//            "2013-02-08 06:27:00"
-//
-//            "2013-02-08 06:20:27"
-//
-//            "2013-02-08 14:35:00"
-//
-//            "2013-02-08 15:29:00"
-//
-//            "2013-02-08 15:47:00"
-//
-//            "2013-02-08 16:01:00"
-//
-//            "2013-02-08 16:48:00"
-//
-//            "2013-02-08 17:49:00"
-//
-//            "2013-02-08 18:29:00"
-//
-//            "2013-092-08 18:35:00"
-//
-//            "2013-03-26 14:25:00"
-//
-//            "2013-03-28 14:07:27"
-
     @Before
     public void setup() throws ParseException, IOException {
         System.out.println(name.getMethodName());
@@ -84,25 +52,6 @@ public class CongestionCalculationServiceImpTest {
         }catch (Exception e){
             e.printStackTrace();
         }
-//        String[] dateStrings = Files.readAllLines(Path.of(name.getMethodName()+".txt")).toArray(new String[]{});
-//        String[] dateStrings = new String[]{
-//                "2013-01-14 21:00:00",//0   MON
-//                "2013-01-15 21:00:00",//0   TUE
-//                "2013-02-07 06:23:27",//8   THR
-//                "2013-02-07 15:27:00",//13  THR
-//                "2013-02-08 06:27:00",//8   FRI
-//                "2013-02-08 06:20:27",//8   FRI
-//                "2013-02-08 14:35:00",//8   FRI  ..
-//                "2013-02-08 15:29:00",//13  FRI  21
-//                "2013-02-08 15:47:00",//18  FRI  39
-//                "2013-02-08 16:01:00",//18  FRI
-//                "2013-02-08 16:48:00",//18  FRI  57
-//                "2013-02-08 17:49:00",//13  FRI  70
-//                "2013-02-08 18:29:00",//8   FRI
-//                "2013-02-08 18:35:00",//0   FRI
-//                "2013-03-26 14:25:00",//8   TUE
-//                "2013-03-28 14:07:27" //8   THR
-//        };
         dates = new Date[dateStrings.length];
         Date d;
         for(int i=0; i<dates.length; i++){
